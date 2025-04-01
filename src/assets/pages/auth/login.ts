@@ -1,4 +1,19 @@
-<app-floating-configurator />
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+import { CheckboxModule } from 'primeng/checkbox';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { RippleModule } from 'primeng/ripple';
+import { AppFloatingConfigurator } from '../../layout/component/app.floatingconfigurator';
+
+@Component({
+    selector: 'app-login',
+    standalone: true,
+    imports: [ButtonModule, CheckboxModule, InputTextModule, PasswordModule, FormsModule, RouterModule, RippleModule, AppFloatingConfigurator],
+    template: `
+        <app-floating-configurator />
         <div class="bg-surface-50 dark:bg-surface-950 flex items-center justify-center min-h-screen min-w-[100vw] overflow-hidden">
             <div class="flex flex-col items-center justify-center">
                 <div style="border-radius: 56px; padding: 0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%)">
@@ -45,3 +60,12 @@
                 </div>
             </div>
         </div>
+    `
+})
+export class Login {
+    email: string = '';
+
+    password: string = '';
+
+    checked: boolean = false;
+}
